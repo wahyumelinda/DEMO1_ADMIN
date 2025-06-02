@@ -4,10 +4,8 @@ import requests
 
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx79d0WrN8wW_Z2clc9EZZySSJHSI_PRb4djgo1s-Houpu9QDvsc6CgKyR-F7tmFWvxPQ/exec"
 
-st.title("📋 Manajemen BU di Google Sheet")
-
 def run():
-    st.subheader("📄 Data BU yang Sudah Ada")
+    st.subheader("📋 Manajemen BU di Google Sheet")
     df = pd.DataFrame()
 
     try:
