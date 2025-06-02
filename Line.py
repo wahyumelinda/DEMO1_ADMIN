@@ -5,12 +5,11 @@ import requests
 # 🔗 Ganti ini dengan URL Web App dari Apps Script kamu
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzN1pW0dkBl4y0bOrDEYoqXuviUSmmnI1Pqp_fxa2p4PjZAzGAAv_u7CLBenDaHPzYFbg/exec"
 
-st.title("📋 Manajemen Data Sheet 'Line'")
-
 def run():
     # ============================
     # 1. Tampilkan isi Sheet "Line"
     # ============================
+    st.subheader("📋 Manajemen Data Sheet 'Line'")
     df_line = pd.DataFrame()
 
     try:
