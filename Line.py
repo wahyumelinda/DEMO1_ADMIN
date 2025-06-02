@@ -24,7 +24,8 @@ def run():
             st.warning(f"Gagal mengambil data Line: {line_response.status_code}")
     except Exception as e:
         st.error(f"❌ Error mengambil data Line: {e}")
-
+    st.write("---")
+    
     # ============================
     # 2. Form Tambah Data ke Line
     # ============================
@@ -65,7 +66,8 @@ def run():
         else:
             st.warning("⚠️ Nama Line tidak boleh kosong.")
 
-
+    st.write("---")
+    
     # ============================
     # 3. Hapus Baris dari Line
     # ============================
