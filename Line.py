@@ -29,7 +29,7 @@ def run():
     # ============================
     # 2. Form Tambah Data ke Line
     # ============================
-    st.subheader("➕ Tambah Baris Baru ke Sheet 'Line'")
+    st.subheader("➕ Tambah Line Baru")
 
     # Ambil dropdown SC dari sheet BU
     sc_list = []
@@ -71,7 +71,7 @@ def run():
     # ============================
     # 3. Hapus Baris dari Line
     # ============================
-    st.subheader("❌ Hapus Baris dari Sheet 'Line'")
+    st.subheader("❌ Hapus Line")
 
     if not df_line.empty:
         label_list = df_line.apply(lambda row: f"{row['BU']} - {row['Line']}", axis=1)
