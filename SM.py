@@ -4,19 +4,18 @@ import requests
 
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyMIJuAzRtDq-w0qBabmsnXsozqxBHY2GFWKmb4YPYIrfFOTh66OLGmE0zcQgcs7MES/exec"
 
-st.title("📋 Manajemen SM di Google Sheet")
-
 def run():
-    st.subheader("📄 Data SM yang Sudah Ada")
+    st.subheader("📋 Manajemen Data Sheet 'SM'")
     df = pd.DataFrame()
-
+    
     try:
         response = requests.get(WEB_APP_URL)
         if response.status_code == 200:
             data = response.json()
             df = pd.DataFrame(data, columns=["SM"])
             st.dataframe(df, use_container_width=True)
-
+            st.write("---")
+    
             # ============================
             # 1. Tambah Data (DILETAKKAN DI ATAS)
             # ============================
@@ -38,11 +37,12 @@ def run():
                         st.error("⚠️ Data SM sudah ada. Tidak boleh duplikat.")
                 else:
                     st.warning("⚠️ Input tidak boleh kosong.")
-
+            st.write("---")
+            
             # ============================
             # 2. Hapus Data (DILETAKKAN DI BAWAH)
             # ============================
-            st.subheader("❌ Hapus SC")
+            st.subheader("❌ Hapus SM")
             if not df.empty:
                 selected_index = st.selectbox(
                     "Pilih data yang ingin dihapus:",
