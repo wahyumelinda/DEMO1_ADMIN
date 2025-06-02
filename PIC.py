@@ -5,13 +5,11 @@ import requests
 # 🔗 Ganti ini dengan URL Web App dari Apps Script kamu
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzyJfNTlKVzzaLZQhSNcnx-yrpqy3NO1h9uw4w9-oPj7OXBY8xeh73MPxlaOqFl3AlR/exec"
 
-st.title("📋 Manajemen Data Sheet 'PIC'")
-
 def run() :
     # ============================
     # 1. Tampilkan isi Sheet "PIC"
     # ============================
-    st.subheader("📄 Data di Sheet 'PIC'")
+    st.subheader("📋 Manajemen Data Sheet 'PIC'")
     df_pic = pd.DataFrame()
 
     try:
@@ -25,10 +23,12 @@ def run() :
     except Exception as e:
         st.error(f"❌ Error mengambil data PIC: {e}")
 
+    st.write("---")
+    
     # ============================
     # 2. Form Tambah Data ke PIC
     # ============================
-    st.subheader("➕ Tambah Baris Baru ke Sheet 'PIC'")
+    st.subheader("➕ Tambah PIC Baru")
 
     # Ambil dropdown SC dari sheet BU
     sc_list = []
@@ -65,11 +65,12 @@ def run() :
         else:
             st.warning("⚠️ Nama PIC tidak boleh kosong.")
 
-
+    st.write("---")
+    
     # ============================
     # 3. Hapus Baris dari PIC
     # ============================
-    st.subheader("❌ Hapus Baris dari Sheet 'PIC'")
+    st.subheader("❌ Hapus PIC")
 
     if not df_pic.empty:
         label_list = df_pic.apply(lambda row: f"{row['BU']} - {row['PIC']}", axis=1)
