@@ -4,19 +4,18 @@ import requests
 
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycby-5gMYTR7ioN0GuJYWnQj-mpdmSvsmWLLw6w39WlBHHDt_gwh3o20UEJzieNxpyyYhHQ/exec"
 
-st.title("📋 Manajemen SPV di Google Sheet")
-
 def run():
-    st.subheader("📄 Data SPV yang Sudah Ada")
+    st.subheader("📋 Manajemen Data Sheet 'SPV'")
     df = pd.DataFrame()
-
+    
     try:
         response = requests.get(WEB_APP_URL)
         if response.status_code == 200:
             data = response.json()
             df = pd.DataFrame(data, columns=["SPV"])
             st.dataframe(df, use_container_width=True)
-
+            st.write("---")
+            
             # ============================
             # 1. Tambah Data (DILETAKKAN DI ATAS)
             # ============================
@@ -38,11 +37,12 @@ def run():
                         st.error("⚠️ Data SPV sudah ada. Tidak boleh duplikat.")
                 else:
                     st.warning("⚠️ Input tidak boleh kosong.")
-
+            st.write("---")
+            
             # ============================
             # 2. Hapus Data (DILETAKKAN DI BAWAH)
             # ============================
-            st.subheader("❌ Hapus SC")
+            st.subheader("❌ Hapus SPV")
             if not df.empty:
                 selected_index = st.selectbox(
                     "Pilih data yang ingin dihapus:",
