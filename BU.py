@@ -5,7 +5,7 @@ import requests
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbx79d0WrN8wW_Z2clc9EZZySSJHSI_PRb4djgo1s-Houpu9QDvsc6CgKyR-F7tmFWvxPQ/exec"
 
 def run():
-    st.subheader("📋 Manajemen BU di Google Sheet")
+    st.subheader("📋 Manajemen Data Sheet 'BU'")
     df = pd.DataFrame()
 
     try:
