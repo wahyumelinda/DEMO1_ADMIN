@@ -44,7 +44,7 @@ def run():
             # ============================
             # 2. Hapus Data (DILETAKKAN DI BAWAH)
             # ============================
-            st.subheader("❌ Hapus SC")
+            st.subheader("❌ Hapus BU")
             if not df.empty:
                 selected_index = st.selectbox(
                     "Pilih data yang ingin dihapus:",
