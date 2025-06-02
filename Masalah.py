@@ -5,13 +5,11 @@ import requests
 # 🔗 Ganti ini dengan URL Web App dari Apps Script kamu
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzuls9ToUF3CaJ47bwElktRDC3buHwfFM6vwv7ziWeeWlDDDni6iSvE-dswpW0HwBw7mA/exec"
 
-st.title("📋 Manajemen Data Sheet 'Masalah'")
-
 def run():
     # ============================
     # 1. Tampilkan isi Sheet "Masalah"
     # ============================
-    st.subheader("📄 Data di Sheet 'Masalah'")
+    st.subheader("📋 Manajemen Data Sheet 'Masalah'")
     df_masalah = pd.DataFrame()
 
     try:
