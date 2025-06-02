@@ -5,13 +5,11 @@ import requests
 # 🔗 Ganti ini dengan URL Web App dari Apps Script kamu
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxfM7TAIgHXrkPWC3-RguuOdaR-ZGko5woddtYxWFsxEPQXH4EH4x34rlT3YEbKfhCn/exec"
 
-st.title("📋 Manajemen Data Sheet 'Produk'")
-
 def run():
     # ============================
     # 1. Tampilkan isi Sheet "Produk"
     # ============================
-    st.subheader("📄 Data di Sheet 'Produk'")
+    st.subheader("📋 Manajemen Data Sheet 'Produk'")
     df_produk = pd.DataFrame()
 
     try:
@@ -24,11 +22,13 @@ def run():
             st.warning(f"Gagal mengambil data Produk: {produk_response.status_code}")
     except Exception as e:
         st.error(f"❌ Error mengambil data Produk: {e}")
-
+    
+    st.write("---")
+    
     # ============================
     # 2. Form Tambah Data ke Produk
     # ============================
-    st.subheader("➕ Tambah Baris Baru ke Sheet 'Produk'")
+    st.subheader("➕ Tambah Produk Baru")
 
     # Ambil dropdown SC dari sheet BU
     sc_list = []
@@ -65,11 +65,12 @@ def run():
         else:
             st.warning("⚠️ Nama Produk tidak boleh kosong.")
 
-
+    st.write("---")
+    
     # ============================
     # 3. Hapus Baris dari Produk
     # ============================
-    st.subheader("❌ Hapus Baris dari Sheet 'Produk'")
+    st.subheader("❌ Hapus Produk")
 
     if not df_produk.empty:
         label_list = df_produk.apply(lambda row: f"{row['BU']} - {row['Produk']}", axis=1)
