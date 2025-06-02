@@ -16,7 +16,8 @@ def run():
             data = response.json()
             df = pd.DataFrame(data, columns=["BU"])
             st.dataframe(df, use_container_width=True)
-
+            st.write("---")
+            
             # ============================
             # 1. Tambah Data (DILETAKKAN DI ATAS)
             # ============================
@@ -38,7 +39,8 @@ def run():
                         st.error("⚠️ Data BU sudah ada. Tidak boleh duplikat.")
                 else:
                     st.warning("⚠️ Input tidak boleh kosong.")
-
+            st.write("---")
+            
             # ============================
             # 2. Hapus Data (DILETAKKAN DI BAWAH)
             # ============================
