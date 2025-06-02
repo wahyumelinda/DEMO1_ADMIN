@@ -11,7 +11,6 @@ def run():
     # ============================
     # 1. Tampilkan isi Sheet "Line"
     # ============================
-    st.subheader("📄 Data di Sheet 'Line'")
     df_line = pd.DataFrame()
 
     try:
